@@ -3,7 +3,7 @@ import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
 import { globalErr, log } from "./middlewares/middleware.js";
-
+import connectDB from "./db/conn.js";
 
 
 // Set up
@@ -15,6 +15,7 @@ const app = express();
 
 
 // Connect DB
+connectDB();
 
 // Middleware
 app.use(express.json());
